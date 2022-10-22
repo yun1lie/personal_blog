@@ -20,4 +20,9 @@ public class hello {
     public String about_me(Model model){
         return "about_me";
     }
+
+    @RequestMapping("/list")
+    public  String list(Model model){
+        return "list";
+    }
 }
