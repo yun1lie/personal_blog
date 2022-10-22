@@ -15,4 +15,9 @@ public class hello {
         return "index";
 
     }
+
+    @RequestMapping("/about_me")
+    public String about_me(Model model){
+        return "about_me";
+    }
 }
