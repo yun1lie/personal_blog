@@ -86,155 +86,44 @@
 <div class="article_box clearfix">
     <div class="left">
         <!--首页最新模板部分-->
-        <div class="article_box_one"  >
+        <div class="article_box_one">
             <div class="index_article_title clearfix">
                 <h3>Latest articles</h3>
                 <a href="list.html">More></a>
             </div>
-
-            <ul class="index_article">
-                <li class="clearfix article_list">
-                    <a href="article.html" class="article_list_img">
-                        <img src="img/bg_1.png">
-                    </a>
-                    <div th:each="article:${articleList}">
-                        <a href="#"><h3>这里是文章的title</h3></a>
-                        <p>11111111111111111111111111111111111111111111111111111111
-                        <div class="article_list_link">
+            <div th:each="article:${articleList}">
+                <ul class="index_article">
+                    <li class="clearfix article_list">
+                        <a href="article.html" class="article_list_img">
+                            <img src="img/bg_1.png">
+                        </a>
+                        <div>
+                            <a href="#"><h3 th:text="${article.title}"></h3></a>
+                            <p th:text="${article.induction}"></p>
+                            <div class="article_list_link">
                         <span class="article_list_count">
                             <i class="see_count"></i>
-                            查看次数:500
+                            查看次数:<i th:text="${article.view_num}"></i>
                         </span>
-                            <span class="article_list_like">
+                                <span class="article_list_like">
                             <i class="like_count"></i>
-                            喜欢次数:500
+                            喜欢次数:<i th:text="${article.likes}"></i>
                         </span>
-                            <a href="article.html">查看详细+</a>
-                    </div>
-                    </div>
-                </li>
-<!--                <li class="clearfix article_list">-->
+                                <a href="article.html">查看详细+</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-<!--                    <a href="article.html" class="article_list_img">-->
-<!--                        <img src="img/bg_2.png">-->
-<!--                    </a>-->
-
-<!--                    <h3>这里是文章的title</h3>-->
-<!--                    <p>-->
-<!--                       222222222222222222222222222222222222222222222222222222222222-->
-
-<!--                    <div class="article_list_link">-->
-<!--                        <span class="article_list_count">-->
-<!--                            <i class="see_count"></i>-->
-<!--                            查看次数:500-->
-<!--                        </span>-->
-
-<!--                        <span class="article_list_like">-->
-
-
-<!--                            <i class="like_count"></i>-->
-<!--                            喜欢次数:500-->
-
-
-<!--                        </span>-->
-<!--                        <a href="article.html">查看详细+</a>-->
-<!--                    </div>-->
-
-<!--                </li>-->
-<!--                <li class="clearfix article_list">-->
-
-<!--                    <a href="article.html" class="article_list_img">-->
-<!--                        <img src="img/bg_3.png">-->
-<!--                    </a>-->
-
-<!--                    <h3>这里是文章的title</h3>-->
-<!--                    <p>-->
-<!--                        3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
-
-<!--                    <div class="article_list_link">-->
-<!--                        <span class="article_list_count">-->
-<!--                            <i class="see_count"></i>-->
-<!--                            查看次数:500-->
-<!--                        </span>-->
-
-<!--                        <span class="article_list_like">-->
-
-
-<!--                            <i class="like_count"></i>-->
-<!--                            喜欢次数:500-->
-
-
-<!--                        </span>-->
-<!--                        <a href="article.html">查看详细+</a>-->
-<!--                    </div>-->
-
-<!--                </li>-->
-<!--                <li class="clearfix article_list">-->
-
-<!--                    <a href="article.html" class="article_list_img">-->
-<!--                        <img src="img/bg_4.png">-->
-<!--                    </a>-->
-
-<!--                    <h3>这里是文章的title</h3>-->
-<!--                    <p>-->
-<!--                        444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->
-
-<!--                    <div class="article_list_link">-->
-<!--                        <span class="article_list_count">-->
-<!--                            <i class="see_count"></i>-->
-<!--                            查看次数:500-->
-<!--                        </span>-->
-
-<!--                        <span class="article_list_like">-->
-
-
-<!--                            <i class="like_count"></i>-->
-<!--                            喜欢次数:500-->
-
-
-<!--                        </span>-->
-<!--                        <a href="article.html">查看详细+</a>-->
-<!--                    </div>-->
-
-<!--                </li>-->
-<!--                <li class="clearfix article_list">-->
-
-<!--                    <a href="article.html" class="article_list_img">-->
-<!--                        <img src="img/bg_5.png">-->
-<!--                    </a>-->
-
-<!--                    <h3>这里是文章的title</h3>-->
-<!--                    <p>-->
-<!--                       5555555555555555555555555555555555555555555555555555555555555555555-->
-
-<!--                    <div class="article_list_link">-->
-<!--                        <span class="article_list_count">-->
-<!--                            <i class="see_count"></i>-->
-<!--                            查看次数:500-->
-<!--                        </span>-->
-
-<!--                        <span class="article_list_like">-->
-
-
-<!--                            <i class="like_count"></i>-->
-<!--                            喜欢次数:500-->
-
-
-<!--                        </span>-->
-<!--                        <a href="article.html">查看详细+</a>-->
-<!--                    </div>-->
-
-<!--                </li>-->
-            </ul>
         </div>
-        <!--首页学习笔记部分-->
+        <!--Health tips-->
         <div class="article_box_two">
             <div class="index_article_title clearfix">
                 <h3>Health tips</h3>
                 <a href="article.html">More></a>
             </div>
             <div class="article_btn">
-
                 <div class="article_btn_nav">
                     <ul>
                         <li>About sleep</li>
@@ -244,22 +133,17 @@
                 </div>
 
                 <div class="article_btn_box">
-
-
                     <div class="article_btn_box_item clearfix">
                         <a href="#" class="article_btn_box_item_img">
                             <img src="">
                         </a>
                         <ul>
-                            <li><i></i><a href="article.html"
-                                          imgsrc="img/bg_6.png">芜湖</a>
-                                <p>大司马</p></li>
-                            <li><i></i><a href="article.html"
-                                          imgsrc="img/bg_7.png">欸嘿</a>
-                                <p>嘻嘻嘻</p></li>Health tips
-                            <li><i></i><a href="article.html"
-                                          imgsrc="img/bg_8.png">就这</a>
-                                <p>啧啧啧</p></li>
+                            <li th:each="article1:${articleList1}">
+                                <i></i><a href="article.html"
+                                          imgsrc="img/bg_6.png"
+                                          th:text="${article1.title}"></a>
+                                <p th:text="${article1.induction}"></p>
+                            </li>
 
                         </ul>
                     </div>
@@ -281,31 +165,23 @@
 
                         </ul>
                     </div>
-                    <div class="article_btn_box_item clearfix">
-                        <a href="article.html" class="article_btn_box_item_img">
-                            <img src="">
-                        </a>
-                        <ul>
-                            <li><i></i><a href="article.html"
-                                          imgsrc="img/bg_6.png">这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记</a>
-                                <p>这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分</p></li>
-                            <li><i></i><a href="article.html"
-                                          imgsrc="img/bg_7.png">这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记</a>
-                                <p>这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分</p></li>
-                            <li><i></i><a href="article.html"
-                                          imgsrc="img/bg_8.png">这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记</a>
-                                <p>这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分</p></li>
+                    <!--                    <div class="article_btn_box_item clearfix">-->
+                    <!--                        <a href="article.html" class="article_btn_box_item_img">-->
+                    <!--                            <img src="">-->
+                    <!--                        </a>-->
+                    <!--                        <ul>-->
+                    <!--                            <li><i></i><a href="article.html"-->
+                    <!--                                          imgsrc="img/bg_6.png">这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记</a>-->
+                    <!--                                <p>这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分</p></li>-->
+                    <!--                            <li><i></i><a href="article.html"-->
+                    <!--                                          imgsrc="img/bg_7.png">这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记</a>-->
+                    <!--                                <p>这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分</p></li>-->
+                    <!--                            <li><i></i><a href="article.html"-->
+                    <!--                                          imgsrc="img/bg_8.png">这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记这里是学习笔记</a>-->
+                    <!--                                <p>这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分这里是学习笔记的简介部分</p></li>-->
 
-                        </ul>
-                    </div>
-                    <div class="article_btn_box_item clearfix">
-                        <a href="article.html" class="article_btn_box_item_img">
-                            <img src="">
-                        </a>
-                        <ul>
-                        </ul>
-                    </div>
-
+                    <!--                        </ul>-->
+                    <!--                    </div>-->
                 </div>
 
             </div>
@@ -664,11 +540,15 @@
         </div>
         <div class="footer_text">
             <p><i>Site Statement:</i></p>
-            <p>1. The purpose of the creation of this site is based on learning and communication, and to exchange things related to health.</p>
-            <p>2. All the knowledge shared in this site is only for personal learning and research, and shall not be used for any commercial purpose without permission.</p>
-            <p>3. All articles on this site can be reprinted, please indicate the source, welcome to see the favorite articles to help forward and like.</p>
-<!--            <p>Copyright © Susan  All copyrights reserved</p>-->
-        </div>真正的自信是内心对自己公平的看待
+            <p>1. The purpose of the creation of this site is based on learning and communication, and to exchange
+                things related to health.</p>
+            <p>2. All the knowledge shared in this site is only for personal learning and research, and shall not be
+                used for any commercial purpose without permission.</p>
+            <p>3. All articles on this site can be reprinted, please indicate the source, welcome to see the favorite
+                articles to help forward and like.</p>
+            <!--            <p>Copyright © Susan  All copyrights reserved</p>-->
+        </div>
+        真正的自信是内心对自己公平的看待
     </div>
 
 </div>
