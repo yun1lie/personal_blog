@@ -23,8 +23,8 @@
         </div>
         <div class="header_nav">
             <ul class="clearfix">
-                <li><a href="list.html">Article List</a></li>
-                <li class="have_second"><a href="list.html">healthy body</a>
+                <li><a th:href="@{/list}">Article List</a></li>
+                <li class="have_second"><a th:href="@{/list}">healthy body</a>
 
                     <ul class="nav_second">
                         <i></i>
@@ -165,7 +165,7 @@
                         <ul th:each="article3:${articleList3}">
                             <li><i></i><a href="article.html"
                                           imgsrc="img/bg_8.png" th:text="${article3.title}"></a>
-                                <p ></p></li>
+                                <p></p></li>
 
                         </ul>
                     </div>

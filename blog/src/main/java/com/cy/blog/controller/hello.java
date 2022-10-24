@@ -40,6 +40,8 @@ public class hello {
 
     @RequestMapping("/list")
     public String list(Model model) {
+        List<article> articleList = mapper.article();
+        model.addAttribute("articleList", articleList);
         return "list";
     }
 
