@@ -152,8 +152,9 @@
                         <a href="#" class="article_btn_box_item_img">
                             <img src="">
                         </a>
-                        <ul th:each="article2:${articleList2}">
-                            <li><i></i><a href="article.html"
+                        <ul>
+                            <li th:each="article2:${articleList2}">
+                                <i></i><a href="article.html"
                                           imgsrc="img/bg_7.png" th:text="${article2.title}"></a>
                                 <p th:text="${article2.induction}"></p></li>
                         </ul>
@@ -162,11 +163,10 @@
                         <a href="article.html" class="article_btn_box_item_img">
                             <img src="">
                         </a>
-                        <ul th:each="article3:${articleList3}">
-                            <li><i></i><a href="article.html"
+                        <ul>
+                            <li th:each="article3:${articleList3}"><i></i><a href="article.html"
                                           imgsrc="img/bg_8.png" th:text="${article3.title}"></a>
-                                <p></p></li>
-
+                                <p th:text="${article3.induction}"></p></li>
                         </ul>
                     </div>
                 </div>
@@ -179,182 +179,33 @@
                 <h3>Recommended blog posts</h3>
                 <a href="list.html">更多></a>
             </div>
-            <ul class="index_article">
-                <li class="clearfix article_list">
+            <div th:each="article4:${articleList4}">
+                <ul class="index_article">
+                    <li class="clearfix article_list">
 
-                    <a href="article.html" class="article_list_img">
-                        <img src="img/bg_6.png">
-                    </a>
+                        <a href="article.html" class="article_list_img">
+                            <img src="img/bg_6.png">
+                        </a>
 
-                    <h3>这里是文章的title</h3>
-                    <p>这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页</p>
+                        <h3  th:text="${article4.title}"></h3>
+                        <p th:text="${article4.induction}"></p>
 
 
-                    <div class="article_list_link">
+                        <div class="article_list_link">
                         <span class="article_list_count">
                             <i class="see_count"></i>
-                            查看次数:500
+                            查看次数:<i th:text="${article4.view_num}"></i>
                         </span>
-
-                        <span class="article_list_like">
-
-
+                            <span class="article_list_like">
                             <i class="like_count"></i>
-                            喜欢次数:500
-
-
+                            喜欢次数:<i th:text="${article4.likes}"></i>
                         </span>
-                        <a href="article.html">查看详细+</a>
-                    </div>
-
-                </li>
-                <li class="clearfix article_list">
-
-                    <a href="article.html" class="article_list_img">
-                        <img src="img/bg_7.png">
-                    </a>
-
-                    <h3>这里是文章的title</h3>
-                    <p>这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页</p>
-
-
-                    <div class="article_list_link">
-                        <span class="article_list_count">
-                            <i class="see_count"></i>
-                            查看次数:500
-                        </span>
-
-                        <span class="article_list_like">
-
-
-                            <i class="like_count"></i>
-                            喜欢次数:500
-
-
-                        </span>
-                        <a href="article.html">查看详细+</a>
-                    </div>
-
-                </li>
-                <li class="clearfix article_list">
-
-                    <a href="#" class="article_list_img">
-                        <img src="img/bg_8.png">
-                    </a>
-
-                    <h3>这里是文章的title</h3>
-                    <p>这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页</p>
-
-
-                    <div class="article_list_link">
-                        <span class="article_list_count">
-                            <i class="see_count"></i>
-                            查看次数:500
-                        </span>
-
-                        <span class="article_list_like">
-
-
-                            <i class="like_count"></i>
-                            喜欢次数:500
-
-
-                        </span>
-                        <a href="#">查看详细+</a>
-                    </div>
-
-                </li>
-                <li class="clearfix article_list">
-
-                    <a href="article.html" class="article_list_img">
-                        <img src="img/banner1.png">
-                    </a>
-
-                    <h3>这里是文章的title</h3>
-                    <p>这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页</p>
-
-
-                    <div class="article_list_link">
-                        <span class="article_list_count">
-                            <i class="see_count"></i>
-                            查看次数:500
-                        </span>
-
-                        <span class="article_list_like">
-
-
-                            <i class="like_count"></i>
-                            喜欢次数:500
-
-
-                        </span>
-                        <a href="article.html">查看详细+</a>
-                    </div>
-
-                </li>
-                <li class="clearfix article_list">
-
-                    <a href="article.html" class="article_list_img">
-                        <img src="img/banner1.png">
-                    </a>
-
-                    <h3>这里是文章的title</h3>
-                    <p>这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页</p>
-
-
-                    <div class="article_list_link">
-                        <span class="article_list_count">
-                            <i class="see_count"></i>
-                            查看次数:500
-                        </span>
-
-                        <span class="article_list_like">
-
-
-                            <i class="like_count"></i>
-                            喜欢次数:500
-
-
-                        </span>
-                        <a href="article.html">查看详细+</a>
-                    </div>
-
-                </li>
-
-                <li class="clearfix article_list">
-
-                    <a href="article.html" class="article_list_img">
-                        <img src="img/banner1.png">
-                    </a>
-
-                    <h3>这里是文章的title</h3>
-                    <p>这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页这里是最新模板的分享信息页</p>
-
-
-                    <div class="article_list_link">
-                        <span class="article_list_count">
-                            <i class="see_count"></i>
-                            查看次数:500
-                        </span>
-
-                        <span class="article_list_like">
-
-
-                            <i class="like_count"></i>
-                            喜欢次数:500
-
-
-                        </span>
-                        <a href="article.html" target="_blank">查看详细+</a>
-                    </div>
-
-                </li>
-
-
-            </ul>
+                            <a href="article.html">查看详细+</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-
         <div>
             <input type="button" class="more" id="loadmore" value="点击加载更多">
         </div>
