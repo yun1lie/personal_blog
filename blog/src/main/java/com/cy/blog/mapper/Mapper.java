@@ -18,5 +18,5 @@ public interface Mapper {
     List<article>articlesleep();
 
     @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'diet' LIMIT 3")
-    List<article>articlesleep();
+    List<article>articldiet();
 }
