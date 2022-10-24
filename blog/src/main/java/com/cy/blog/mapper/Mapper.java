@@ -16,4 +16,7 @@ public interface Mapper {
 
     @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'sleep' LIMIT 3")
     List<article>articlesleep();
+
+    @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'diet' LIMIT 3")
+    List<article>articlesleep();
 }
