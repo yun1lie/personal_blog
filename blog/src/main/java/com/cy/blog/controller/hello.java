@@ -14,6 +14,7 @@ import java.util.List;
 public class hello {
     @Autowired
     private Mapper mapper;
+
     // canshu model cun fang shujv
     @RequestMapping("/")
     public String hello(Model model) {
@@ -38,15 +39,18 @@ public class hello {
     }
 
     @RequestMapping("/about_me")
-    public String about_me(Model model){
+    public String about_me(Model model) {
         List<AboutMe> aboutMeList = mapper.aboutme();
         model.addAttribute("about", aboutMeList.get(0));
         return "about_me";
     }
 
     @RequestMapping("/list")
-    public  String list(Model model){
+    public String list(Model model) {
+        List<article> articleList = mapper.article();
+        model.addAttribute("articleList", articleList);
         return "list";
     }
+
 
 }
