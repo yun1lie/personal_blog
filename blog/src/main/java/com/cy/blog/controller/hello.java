@@ -24,6 +24,9 @@ public class hello {
 
         List<article> articleList1 = mapper.articlesleep();
         model.addAttribute("articleList1", articleList1);
+
+        List<article> articleList2 = mapper.articldiet();
+        model.addAttribute("articleList2", articleList2);
         return "index";
 
     }
