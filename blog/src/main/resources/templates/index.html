@@ -207,26 +207,17 @@
             </div>
         </div>
         <div>
-            <input type="button" class="more" id="loadmore" value="点击加载更多">
+            <input type="button" class="more" id="loadmore" value="Click Load more">
         </div>
-
     </div>
     <!--异步获取文章-->
     <script>
-
         $(function () {
-
-
             var i = 2; //设置当前页数
-
             $('#loadmore').click(function () {
-
                 $.ajax({
-
-                    url: 'http://localhost/e/action/getmore.php', // 这是当前服务器的地址
-
+                    url: 'http://http://localhost:8080/#/', // 这是当前服务器的地址
                     type: 'POST',
-
                     data: {
                         "next": i,
                         'table': 'news',
@@ -235,49 +226,27 @@
                         'limit': 6,
                         'small_length': 120
                     },
-
                     dataType: 'html',
-
                     beforeSend: function () {
-
-                        $("#loadmore").attr('value', '正在努力加载中...');
-
+                        $("#loadmore").attr('value', 'Working on loading...');
                         $('#loadmore').attr('disabled', 'disabled');
-
                     },
-
                     success: function (data) {
-
                         if (data.length > 10) {
-
                             $("#showajaxnews").append(data);
-
                             $("#loadmore").removeAttr('disabled');
-
-                            $("#loadmore").attr('value', '点击加载更多!');
-
+                            $("#loadmore").attr('value', 'Click Load more!');
                             i++;
-
                         } else {
-
-                            $("#loadmore").show().html("已全部加载完毕！");
-
+                            $("#loadmore").show().html("All loaded！");
                             $('#loadmore').attr('disabled', 'disabled');
-
                             return false;
-
                         }
-
                     }
-
                 });
-
             });
-
         });
-
     </script>
-
     <div class="right">
         <!--个人介绍部分-->
         <div class="self_info right_box">
@@ -323,7 +292,7 @@
 
         <!--座右铭目的把div对齐最多只能2行字，多了就高了-->
         <div class="self_zuoyoum right_box">
-            <h3>真正的自信是内心对自己公平的看待</h3>
+<!--            <h3>真正的自信是内心对自己公平的看待</h3>-->
 
         </div>
 
@@ -386,7 +355,6 @@
                 articles to help forward and like.</p>
             <!--            <p>Copyright © Susan  All copyrights reserved</p>-->
         </div>
-        真正的自信是内心对自己公平的看待
     </div>
 
 </div>
