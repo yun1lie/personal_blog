@@ -15,8 +15,14 @@ public interface Mapper {
     List<article>article();
 
     @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'sleep' LIMIT 3")
-    List<article>articlesleep();
+    List<article>articleSleep();
 
     @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'diet' LIMIT 3")
-    List<article>articldiet();
+    List<article>articleDiet();
+
+    @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'sport' LIMIT 3")
+    List<article>articleSport();
+
+    @Select("SELECT * FROM `blog`.`article`  ORDER BY RAND() LIMIT 5")
+    List<article>articleRecommend();
 }

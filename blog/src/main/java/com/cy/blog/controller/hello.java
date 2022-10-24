@@ -21,11 +21,18 @@ public class hello {
         List<article> articleList = mapper.article();
         model.addAttribute("articleList", articleList);
 
-        List<article> articleList1 = mapper.articlesleep();
+        List<article> articleList1 = mapper.articleSleep();
         model.addAttribute("articleList1", articleList1);
 
-        List<article> articleList2 = mapper.articldiet();
+        List<article> articleList2 = mapper.articleDiet();
         model.addAttribute("articleList2", articleList2);
+
+        List<article> articleList3 = mapper.articleSport();
+        model.addAttribute("articleList3", articleList3);
+
+        List<article>articleList4 = mapper.articleRecommend();
+        model.addAttribute("articleList4", articleList4);
+
         return "index";
 
     }
