@@ -11,7 +11,7 @@ public interface Mapper {
     @Select("SELECT * FROM `blog`.`about_me`")
     List<AboutMe> aboutme();
 
-    @Select("SELECT * FROM `blog`.`article` LIMIT 5")
+    @Select("SELECT * FROM `blog`.`article` LIMIT 6")
     List<Article> article();
 
     @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'sleep' LIMIT 3")
@@ -28,4 +28,13 @@ public interface Mapper {
 
     @Select("select * from article where id = #{id}")
     List<Article> getArticle(Article article);
+
+    @Select("select * from article where id = (select MAX(id) from article where id < #{id})")
+    List<Article> getPreviousArticle(Article article);
+
+    @Select("select * from article where id = (select MIN(id) from article where id > #{id})")
+    List<Article> getNextArticles(Article article);
+
+
+
 }
