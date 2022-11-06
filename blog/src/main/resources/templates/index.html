@@ -98,7 +98,7 @@
                             <img src="img/bg_1.png">
                         </a>
                         <div>
-                            <a href="#"><h3 th:text="${article.title}"></h3></a>
+                            <a th:href="@{/article(articleId=${article.getId()})}"><h3 th:text="${article.title}"></h3></a>
                             <p th:text="${article.induction}"></p>
                             <div class="article_list_link">
                         <span class="article_list_count">
@@ -290,7 +290,6 @@
             </div>
         </div>
 
-        <!--座右铭目的把div对齐最多只能2行字，多了就高了-->
         <div class="self_zuoyoum right_box">
 <!--            <h3>真正的自信是内心对自己公平的看待</h3>-->
 
