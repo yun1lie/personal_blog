@@ -130,7 +130,9 @@ public class hello {
     @RequestMapping("/article/edit")
     public String eddArticle(@ModelAttribute Article article, Model model) {
         model.addAttribute("Article", new Article());
+        mapper.editArticles(article);
         return "editArticle";
 
     }
+
 }

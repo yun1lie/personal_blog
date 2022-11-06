@@ -3,6 +3,7 @@ package com.cy.blog.mapper;
 import com.cy.blog.entity.AboutMe;
 import com.cy.blog.entity.Article;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -42,6 +43,10 @@ public interface Mapper {
 
     @Select("select * from article where id = (select MIN(id) from article where id > #{id})")
     List<Article> getNextArticles(Article article);
+
+
+    @Update("UPDATE `blog`.`article` SET `title` = #{title}, `induction` = #{induction}, `content` = #{content}, `column` = #{column} WHERE `id` = #{id}")
+    int editArticles(Article article);
 
 
 
