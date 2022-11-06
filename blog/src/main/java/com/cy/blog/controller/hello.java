@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -83,8 +82,6 @@ public class hello {
             List<Article> nextArticleList = mapper.getNextArticles(article);
             Article nextArticle = nextArticleList.get(0);
             model.addAttribute("nextArticle",nextArticle);
-
-
 
             List<Article> articleList = mapper.getArticle(article);
             Article newArticle = articleList.get(0);

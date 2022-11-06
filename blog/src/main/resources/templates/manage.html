@@ -34,28 +34,37 @@
     </div>
 
     <div class="addArticle">
-        <form th:action="@{/article/add}" th:object="${Article}"  method="post">
-            <div>
-                <label>title</label>
-                <input type="text" th:field="*{title}" name="title" placeholder="please input title">
+        <form th:action="@{/article/add}" th:object="${Article}" method="post">
+            <div class="art">
+                <div class="art1">
+                    <label>Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" th:field="*{title}" name="title" placeholder="please input title">
+                </div>
+
             </div>
 
-            <div>
-                <label>induction</label>
-                <input type="text" th:field="*{induction}" name="induction" placeholder="please input induction">
+            <div class="art">
+                <div class="art1">
+                    <label>Induction</label>
+                    <input type="text" th:field="*{induction}" name="induction" placeholder="please input induction">
+                </div>
             </div>
 
-            <div>
-                <label>content</label>
-                <input type="text" th:field="*{content}" name="content" placeholder="please input content">
+            <div class="art">
+                <div class="art1">
+                    <label>Content&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" th:field="*{content}" name="content" placeholder="please input content">
+                </div>
             </div>
 
-            <div>
-                <label>column</label>
-                <input type="text"   th:field="*{column}" name="column" placeholder="please input column">
+            <div class="art">
+                <div class="art1">
+                    <label>Column&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" th:field="*{column}" name="column" placeholder="please input column">
+                </div>
             </div>
 
-            <div>
+            <div class="art">
                 <button>submit</button>
             </div>
 
@@ -64,4 +73,60 @@
 
 </div>
 </body>
+<style>
+    .addArticle {
+        height: 300px;
+        color: black;
+        font-size: 30px;
+        margin-top: 8%;
+    }
+
+    .art {
+        width: 100%;
+    }
+
+    .art1 {
+        margin: 1% auto;
+        width: 25%;
+    }
+
+    input {
+        outline-style: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 13px 14px;
+        width: 300px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Microsoft soft";
+    }
+
+    input:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+    }
+
+    .but{
+        width: 100%;
+    }
+
+    button {
+        margin-left: 43%;
+        width: 270px;
+        height: 40px;
+        border-width: 0px;
+        border-radius: 3px;
+        background: #1E90FF;
+        cursor: pointer;
+        outline: none;
+        font-family: Microsoft YaHei;
+        color: white;
+        font-size: 17px;
+    }
+  button:hover {
+        background: #5599FF;
+
+</style>
 </html>
