@@ -1,12 +1,13 @@
 package com.cy.blog.controller;
 
 import com.cy.blog.entity.AboutMe;
-import com.cy.blog.entity.article;
+import com.cy.blog.entity.Article;
 import com.cy.blog.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -19,19 +20,19 @@ public class hello {
     @RequestMapping("/")
     public String hello(Model model) {
 
-        List<article> articleList = mapper.article();
+        List<Article> articleList = mapper.article();
         model.addAttribute("articleList", articleList);
 
-        List<article> articleList1 = mapper.articleSleep();
+        List<Article> articleList1 = mapper.articleSleep();
         model.addAttribute("articleList1", articleList1);
 
-        List<article> articleList2 = mapper.articleDiet();
+        List<Article> articleList2 = mapper.articleDiet();
         model.addAttribute("articleList2", articleList2);
 
-        List<article> articleList3 = mapper.articleSport();
+        List<Article> articleList3 = mapper.articleSport();
         model.addAttribute("articleList3", articleList3);
 
-        List<article>articleList4 = mapper.articleRecommend();
+        List<Article> articleList4 = mapper.articleRecommend();
         model.addAttribute("articleList4", articleList4);
 
         return "index";
@@ -47,9 +48,24 @@ public class hello {
 
     @RequestMapping("/list")
     public String list(Model model) {
-        List<article> articleList = mapper.article();
+        List<Article> articleList = mapper.article();
         model.addAttribute("articleList", articleList);
         return "list";
+    }
+
+    @RequestMapping("/article")
+    public String article(@RequestParam Integer articleId, Model model) {
+        Article article = new Article();
+        article.setId(articleId);
+        try {
+            List<Article> articleList = mapper.getArticle(article);
+            Article newArticle = articleList.get(0);
+            model.addAttribute("newArticle", newArticle);
+        } catch (Exception e) {
+
+        }
+
+        return "article";
     }
 
 
