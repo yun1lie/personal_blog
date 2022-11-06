@@ -129,14 +129,14 @@
 
 
                 <div class="article_prev_next_box">
-                    <a href="#"><p>Previous chapter: <span th:text="${previousArticle.getTitle()}"></span></p></a>
-                    <a href="#"><p></p>Next chapter: <span th:text="${nextArticle.getTitle()}"></span></a>
+                    <a th:href="@{/article(articleId=${previousArticle.getId()})}"><p>Previous chapter: <span th:text="${previousArticle.getTitle()}"></span></p></a>
+                    <a th:href="@{/article(articleId=${nextArticle.getId()})}"><p></p>Next chapter: <span th:text="${nextArticle.getTitle()}"></span></a>
                 </div>
             </div>
 
             <div class="article_like_article">
                 <div class="article_article_title">
-                    <h3>Related Rrticles</h3>
+                    <h3>Related Articles</h3>
                 </div>
                 <div class="article_like_list">
                 <a href="#">Article:<span th:text="${allArticle.get(0).getTitle()}"></span></a>
@@ -181,57 +181,65 @@
                 <h3>Recommended In This Column</h3>
                 <div>
                     <ul>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a th:href="@{/article(articleId=1)}">Article:<span th:text="${allArticle.get(0).getTitle()}"></span> </a></li>
+                        <li><a th:href="@{/article(articleId=2)}">Article:<span th:text="${allArticle.get(1).getTitle()}"></span></a></li>
+                        <li><a th:href="@{/article(articleId=3)}">Article:<span th:text="${allArticle.get(2).getTitle()}"></span></a></li>
+                        <li><a th:href="@{/article(articleId=4)}">Article:<span th:text="${allArticle.get(3).getTitle()}"></span></a></li>
+                        <li><a th:href="@{/article(articleId=5)}">Article:<span th:text="${allArticle.get(4).getTitle()}"></span></a></li>
+                        <li><a th:href="@{/article(articleId=6)}">Article:<span th:text="${allArticle.get(5).getTitle()}"></span></a></li>
 
                     </ul>
                 </div>
             </div>
-<!--点击排行-->
-            <div class="right_box tuijian_moban">
-                <h3>点击排行</h3>
-                <div>
-                    <ul>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                    </ul>
-                </div>
-            </div>
-<!--友情链接-->
+
             <div class="right_box youlian_list">
-                <h3>友情链接</h3>
+                <h3>Recommended by bloggers</h3>
                 <div>
                     <ul>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
-                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="https://www.nih.gov/">National lnstitutes of Health</a></li>
+                        <li><a href="http://www.health.yahoo.com/ ">Yahoo! Health</a></li>
+                        <li><a href=" http://www.everydayhealth.com/ "> EverydayHealth</a></li>
+                        <li><a href=" http://www.mercola.com/"> Mercola</a></li>
+                        <li><a href=" http://www.healthline.com "> Healthline</a></li>
+                        <li><a href=" http://www.medicinenet.com">MedicineNet</a></li>
                     </ul>
                 </div>
             </div>
+
+<!--友情链接-->
+            <div class="right_box tuijian_moban">
+                <h3>Websites About Health</h3>
+                <div>
+                    <ul>
+                        <li><a href="https://www.webmd.com/">webmd</a></li>
+                        <li><a href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
+                        <li><a href=" http://www.medicinenet.com">MedicineNet</a></li>
+                        <li><a href="http://www.drugs.com/">Drugs</a></li>
+                        <li><a href="http://www.healthgrades.com/ "> HealthGrades</a></li>
+                        <li><a href="http://www.healthcentral.com/">HealthCentral</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+
 
 <!--微信二维码部分-->
             <div class="self_erweima right_box">
-                <h3>微信二维码</h3>
+                <h3>Facebook</h3>
                 <div>
-                    <img src="img/self_weixin_erweima.png">
+                    <a href="https://connect.facebook.com/">
+                        <img src="https://i.ibb.co/LrVMXNR/social-fb.png">
+                    </a>
                 </div>
             </div>
 <!--qq二维码部分-->
             <div class="self_erweima right_box">
-                <h3>QQ二维码</h3>
+                <h3>Twitter</h3>
                 <div>
-                    <img src="img/self_qq_erweima.png">
+                    <a href="https://twitter-clone-j.netlify.app/auth">
+                        <img src="https://i.ibb.co/vJvbLwm/social-twitter.png">
+                    </a>
                 </div>
             </div>
 
