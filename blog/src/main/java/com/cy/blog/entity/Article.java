@@ -22,7 +22,5 @@ public class Article {
     private String content;
     private String column;
 
-    public Article(int id) {
-        this.id = id;
-    }
+
 }

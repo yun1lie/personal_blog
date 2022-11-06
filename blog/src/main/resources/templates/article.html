@@ -19,37 +19,35 @@
 <div class="head_box">
     <div class="header">
         <div class="header_logo">
-            <a href="index.html"><h2 th:text="${newArticle.induction}">|</h2><h4>天行健,君子自强不息</h4></a>
+            <a th:href="@{/}"><h2>Susan's blog|</h2><h4>Enjoy life.</h4></a>
         </div>
         <div class="header_nav">
             <ul class="clearfix">
-                <li><a href="list.html">个人博客模板分享</a></li>
-                <li class="have_second"><a href="list.html">企业官网模板分享</a>
+                <li><a th:href="@{/list}">Article List</a></li>
+                <li class="have_second"><a th:href="@{/list}">healthy body</a>
 
                     <ul class="nav_second">
                         <i></i>
-                        <li><a href="list.html">模板分享</a></li>
-                        <li><a href="list.html">模板分享</a></li>
-                        <li><a href="list.html">模板分享</a></li>
+                        <li><a th:href="@{/list}">sleep</a></li>
+                        <li><a th:href="@{/list}">diet</a></li>
+                        <li><a th:href="@{/list}">sport</a></li>
                     </ul>
 
                 </li>
                 <li class="have_second">
-                    <a href="list.html">学习笔记分享</a>
+                    <a href="list.html">psychology</a>
                     <ul class="nav_second">
                         <i></i>
-                        <li><a href="list.html">CSS笔记</a></li>
-                        <li><a href="list.html">JS笔记</a></li>
-                        <li><a href="list.html">Jquery笔记</a></li>
+                        <li><a href="list.html">Smile every day</a></li>
+                        <li><a href="list.html">Music recommendation</a></li>
+                        <li><a href="list.html">Travel recommendation</a></li>
                     </ul>
                 </li>
-                <li><a href="list.html">我的博文</a></li>
-                <li><a href="about_me.html">关于我</a></li>
+                <li><a th:href="@{/about_me}">About me</a></li>
             </ul>
         </div>
         <div class="header_search">
             <a href="javascript:void(0);" class="header_search_btn">
-                <!--<img src="img/search.png">-->
                 <i></i>
             </a>
         </div>
@@ -61,6 +59,7 @@
     </div>
 
 </div>
+
 
 <div class="nav_hidden_zhanwei"></div>
 
@@ -90,15 +89,18 @@
             <div class="article_content_box clearfix">
 
                 <div class="article_article_title">
-                    <h3>最新模板
+                    <h3>Article
                         <span>您当前的位置：<a href="#">首页></a><a href="#">列表页></a><a href="#">内容页</a></span>
                     </h3>
                 </div>
 
-                <h3 class="article_content_title">这里是文章的标题</h3>
+                <h3 class="article_content_title"th:text="${newArticle.getTitle()}">这里是文章的标题
+
+
+                </h3>
                 <div class="article_author_count_box clearfix">
-                    <i class="article_author_img" title="张政"><img src="img/banner1.png"></i><a class="article_author" href="#">张政</a>
-                    <p>发表时间：2019-09-08</p><p>查看次数：500</p><p>点赞次数：500</p><p>评论次数：500</p>
+                    <i class="article_author_img" title="Susan"><img src="img/banner1.png"></i><a class="article_author" href="#">Sunsan</a>
+                    <p th:text="${newArticle.getTime()}">发表时间：2019-09-08</p><p>查看次数：500</p><p>点赞次数：500</p><p>评论次数：500</p>
                 </div>
                 <div class="article_info">
                     <p><b>简介&nbsp;&nbsp;</b>这里面放文章的简介这里面放文章的简介这里面放文章的简介这里面放文章的简介这里面放文章的简介这里面放文章的简介这里面放文章的简介这里面放文章的简介</p>
