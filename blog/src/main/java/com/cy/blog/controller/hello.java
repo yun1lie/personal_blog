@@ -62,17 +62,27 @@ public class hello {
         article.setId(articleId);
 
         List<Article> allArticleList = mapper.article();
-        model.addAttribute("allArticle",allArticleList);
+        model.addAttribute("allArticle", allArticleList);
 
-        List<Article> previousArticleList = mapper.getPreviousArticle(article);
-        Article previousArticle = previousArticleList.get(0);
-        model.addAttribute("previousArticle",previousArticle);
-
-        List<Article> nextArticleList = mapper.getNextArticles(article);
-        Article nextArticle = nextArticleList.get(0);
-        model.addAttribute("nextArticle",nextArticle);
 
         try {
+
+            List<Article> previousArticleList = mapper.getPreviousArticle(article);
+            if (previousArticleList.size() > 0){
+                Article previousArticle = previousArticleList.get(0);
+                model.addAttribute("previousArticle",previousArticle);
+
+            }else {
+                Article previousArticle = new Article();
+                model.addAttribute("previousArticle",previousArticle);
+            }
+
+
+
+            List<Article> nextArticleList = mapper.getNextArticles(article);
+            Article nextArticle = nextArticleList.get(0);
+            model.addAttribute("nextArticle",nextArticle);
+
             List<Article> articleList = mapper.getArticle(article);
             Article newArticle = articleList.get(0);
             model.addAttribute("newArticle", newArticle);
@@ -91,15 +101,8 @@ public class hello {
         return "manage";
     }
 
-    @RequestMapping("/login")
-    public String logine(Model model) {
-        model.addAttribute("Article", new Article());
-        return "login";
-    }
-
-
     @RequestMapping("/list1")
-    public String list(@RequestParam String articleColumn,Model model) {
+    public String list(@RequestParam String articleColumn, Model model) {
         Article article = new Article();
         article.setColumn(articleColumn);
         try {
@@ -108,11 +111,10 @@ public class hello {
         } catch (Exception e) {
 
 
-
-
         }
         return "list1";
     }
+
     @RequestMapping("/article/add")
     public String addArticle(@ModelAttribute Article article, Model model) {
         Date date = new Date();
@@ -128,5 +130,18 @@ public class hello {
     }
 
 
+    @RequestMapping("/editArticle")
+    public String editArticle(Model model) {
+        model.addAttribute("Article", new Article());
+        return "editArticle";
+    }
+
+    @RequestMapping("/article/edit")
+    public String eddArticle(@ModelAttribute Article article, Model model) {
+        model.addAttribute("Article", new Article());
+        mapper.editArticles(article);
+        return "editArticle";
+
+    }
 
 }
