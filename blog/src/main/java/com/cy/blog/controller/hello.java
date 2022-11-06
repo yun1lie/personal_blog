@@ -86,8 +86,14 @@ public class hello {
             model.addAttribute("articleList", articleList);
         } catch (Exception e) {
 
-    @PostMapping("/article/add")
-    public String addArticle(@ModelAttribute Article article) {
+
+
+
+        }
+        return "list1";
+    }
+    @RequestMapping("/article/add")
+    public String addArticle(@ModelAttribute Article article, Model model) {
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
         article.setTime(date);
@@ -96,12 +102,8 @@ public class hello {
         article.setLikes(0);
         article.setComment_num(0);
         mapper.addArticle(article);
+        model.addAttribute("Article", new Article());
         return "manage";
-    }
-
-
-        }
-        return "list1";
     }
 
 
