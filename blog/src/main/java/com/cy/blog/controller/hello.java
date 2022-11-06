@@ -65,7 +65,7 @@ public class hello {
         List<Article> allArticleList = mapper.article();
         model.addAttribute("allArticle", allArticleList);
 
-<<<<<<< HEAD
+
         try {
 
             List<Article> previousArticleList = mapper.getPreviousArticle(article);
@@ -83,15 +83,6 @@ public class hello {
             List<Article> nextArticleList = mapper.getNextArticles(article);
             Article nextArticle = nextArticleList.get(0);
             model.addAttribute("nextArticle",nextArticle);
-=======
-        List<Article> previousArticleList = mapper.getPreviousArticle(article);
-        Article previousArticle = previousArticleList.get(0);
-        model.addAttribute("previousArticle", previousArticle);
-
-        List<Article> nextArticleList = mapper.getNextArticles(article);
-        Article nextArticle = nextArticleList.get(0);
-        model.addAttribute("nextArticle", nextArticle);
->>>>>>> main
 
             List<Article> articleList = mapper.getArticle(article);
             Article newArticle = articleList.get(0);

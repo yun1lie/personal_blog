@@ -139,12 +139,12 @@
                     <h3>Related Articles</h3>
                 </div>
                 <div class="article_like_list">
-                <a href="#">Article:<span th:text="${allArticle.get(0).getTitle()}"></span></a>
-                <a href="#">Article:<sapn th:text="${allArticle.get(1).getTitle()}"></sapn></a>
-                <a href="#">Article:<span th:text="${allArticle.get(2).getTitle()}"></span></a>
-                <a href="#">Article:<span th:text="${allArticle.get(3).getTitle()}"></span></a>
-                <a href="#">Article:<span th:text="${allArticle.get(4).getTitle()}"></span></a>
-                <a href="#">Article:<sapn th:text="${allArticle.get(5).getTitle()}"></sapn></a>
+                <a th:href="@{/article(articleId=${allArticle.get(0).getId()})}">Article:<span th:text="${allArticle.get(0).getTitle()}"></span></a>
+                <a th:href="@{/article(articleId=${allArticle.get(1).getId()})}">Article:<sapn th:text="${allArticle.get(1).getTitle()}"></sapn></a>
+                <a th:href="@{/article(articleId=${allArticle.get(2).getId()})}">Article:<span th:text="${allArticle.get(2).getTitle()}"></span></a>
+                <a th:href="@{/article(articleId=${allArticle.get(3).getId()})}">Article:<span th:text="${allArticle.get(3).getTitle()}"></span></a>
+                <a th:href="@{/article(articleId=${allArticle.get(4).getId()})}">Article:<span th:text="${allArticle.get(4).getTitle()}"></span></a>
+                <a th:href="@{/article(articleId=${allArticle.get(5).getId()})}">Article:<sapn th:text="${allArticle.get(5).getTitle()}"></sapn></a>
                 </div>
             </div>
 
