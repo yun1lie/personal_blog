@@ -77,8 +77,9 @@ public class hello {
         model.addAttribute("Article", new Article());
         return "manage";
     }
+
     @RequestMapping("/list1")
-    public String list(@RequestParam String articleColumn,Model model) {
+    public String list(@RequestParam String articleColumn, Model model) {
         Article article = new Article();
         article.setColumn(articleColumn);
         try {
@@ -87,11 +88,10 @@ public class hello {
         } catch (Exception e) {
 
 
-
-
         }
         return "list1";
     }
+
     @RequestMapping("/article/add")
     public String addArticle(@ModelAttribute Article article, Model model) {
         Date date = new Date();
@@ -107,5 +107,8 @@ public class hello {
     }
 
 
-
+    @RequestMapping("/editArticle")
+    public String editArticle(Model model){
+        return "editArticle";
+    }
 }
