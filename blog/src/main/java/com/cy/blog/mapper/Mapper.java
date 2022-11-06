@@ -33,4 +33,7 @@ public interface Mapper {
             "(`title`, `author`, `time`, `view_num`, `likes`, `comment_num`, `induction`, `content`, `column`) " +
             "VALUES (#{title}, #{author} , #{time}, #{view_num}, #{likes}, #{comment_num}, #{induction}, #{content}, #{column})")
     List<Article> addArticle(Article article);
+
+    @Select("select * from article where article.`column` = #{column}")
+    List<Article> getArticleColumn(Article article);
 }

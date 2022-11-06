@@ -77,6 +77,14 @@ public class hello {
         model.addAttribute("Article", new Article());
         return "manage";
     }
+    @RequestMapping("/list1")
+    public String list(@RequestParam String articleColumn,Model model) {
+        Article article = new Article();
+        article.setColumn(articleColumn);
+        try {
+            List<Article> articleList = mapper.getArticleColumn(article);
+            model.addAttribute("articleList", articleList);
+        } catch (Exception e) {
 
     @PostMapping("/article/add")
     public String addArticle(@ModelAttribute Article article) {
@@ -90,6 +98,12 @@ public class hello {
         mapper.addArticle(article);
         return "manage";
     }
+
+
+        }
+        return "list1";
+    }
+
 
 
 }
