@@ -63,15 +63,15 @@ public class hello {
         article.setId(articleId);
 
         List<Article> allArticleList = mapper.article();
-        model.addAttribute("allArticle",allArticleList);
+        model.addAttribute("allArticle", allArticleList);
 
         List<Article> previousArticleList = mapper.getPreviousArticle(article);
         Article previousArticle = previousArticleList.get(0);
-        model.addAttribute("previousArticle",previousArticle);
+        model.addAttribute("previousArticle", previousArticle);
 
         List<Article> nextArticleList = mapper.getNextArticles(article);
         Article nextArticle = nextArticleList.get(0);
-        model.addAttribute("nextArticle",nextArticle);
+        model.addAttribute("nextArticle", nextArticle);
 
         try {
             List<Article> articleList = mapper.getArticle(article);
@@ -122,7 +122,15 @@ public class hello {
 
 
     @RequestMapping("/editArticle")
-    public String editArticle(Model model){
+    public String editArticle(Model model) {
+        model.addAttribute("Article", new Article());
         return "editArticle";
+    }
+
+    @RequestMapping("/article/edit")
+    public String eddArticle(@ModelAttribute Article article, Model model) {
+        model.addAttribute("Article", new Article());
+        return "editArticle";
+
     }
 }
