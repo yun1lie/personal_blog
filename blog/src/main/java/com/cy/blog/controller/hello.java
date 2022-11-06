@@ -68,5 +68,19 @@ public class hello {
         return "article";
     }
 
+    @RequestMapping("/list1")
+    public String list(@RequestParam String articleColumn,Model model) {
+        Article article = new Article();
+        article.setColumn(articleColumn);
+        try {
+            List<Article> articleList = mapper.getArticleColumn(article);
+            model.addAttribute("articleList", articleList);
+        } catch (Exception e) {
+
+        }
+        return "list1";
+    }
+
+
 
 }

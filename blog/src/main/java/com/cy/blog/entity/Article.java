@@ -21,6 +21,4 @@ public class Article {
     private String induction;
     private String content;
     private String column;
-
-
 }

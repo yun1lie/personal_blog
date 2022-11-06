@@ -84,30 +84,30 @@
             <p>Latest articles</p>
         </div>
 
-        <div class="article_box_one" th:each="article:${articleList}">
+        <div class="article_box_one" >
 
-            <ul class="index_article">
-                <li class="clearfix article_list">
+            <ul class="index_article"  >
+                <li class="clearfix article_list" th:each="difarticle:${articleList}" >
 
                     <a href="article.html" class="article_list_img">
                         <img src="img/banner1.png">
                     </a>
 
-                    <h3 th:text="${article.title}"></h3>
-                    <p th:text="${article.induction}"></p>
+                    <h3 th:text="${difarticle.title}"></h3>
+                    <p th:text="${difarticle.getInduction()}"></p>
 
 
                     <div class="article_list_link">
                             <span class="article_list_count">
                                 <i class="see_count"></i>
-                                Number of views:<i th:text="${article.view_num}"></i>
+                                Number of views:<i th:text="${difarticle.getView_num()}"></i>
                             </span>
 
                         <span class="article_list_like">
 
 
                                 <i class="like_count"></i>
-                                Likes:<i th:text="${article.likes}"></i>
+                                Likes:<i th:text="${difarticle.getLikes()}"></i>
 
 
                             </span>

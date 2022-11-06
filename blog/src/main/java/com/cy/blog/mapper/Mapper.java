@@ -28,4 +28,7 @@ public interface Mapper {
 
     @Select("select * from article where id = #{id}")
     List<Article> getArticle(Article article);
+
+    @Select("select * from article where article.`column` = #{column}")
+    List<Article> getArticleColumn(Article article);
 }
