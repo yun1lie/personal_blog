@@ -28,9 +28,9 @@
 
                     <ul class="nav_second">
                         <i></i>
-                        <li><a th:href="@{/list}">sleep</a></li>
-                        <li><a th:href="@{/list}">diet</a></li>
-                        <li><a th:href="@{/list}">sport</a></li>
+                        <li><a th:href="@{/list1(articleColumn= 'sleep')}">sleep</a></li>
+                        <li><a th:href="@{/list1(articleColumn= 'diet')}">diet</a></li>
+                        <li><a th:href="@{/list1(articleColumn= 'sport')}">sport</a></li>
                     </ul>
 
                 </li>
@@ -89,7 +89,7 @@
         <div class="article_box_one">
             <div class="index_article_title clearfix">
                 <h3>Latest articles</h3>
-                <a href="list.html">More></a>
+                <a  th:href="@{/list}">More></a>
             </div>
             <div th:each="article:${articleList}">
                 <ul class="index_article">
@@ -98,18 +98,18 @@
                             <img src="img/bg_1.png">
                         </a>
                         <div>
-                            <a href="#"><h3 th:text="${article.title}"></h3></a>
+                            <a th:href="@{/article(articleId=${article.getId()})}"><h3 th:text="${article.title}"></h3></a>
                             <p th:text="${article.induction}"></p>
                             <div class="article_list_link">
                         <span class="article_list_count">
                             <i class="see_count"></i>
-                            查看次数:<i th:text="${article.view_num}"></i>
+                            Number of Views:<i th:text="${article.view_num}"></i>
                         </span>
                                 <span class="article_list_like">
                             <i class="like_count"></i>
-                            喜欢次数:<i th:text="${article.likes}"></i>
+                            Number of Likes:<i th:text="${article.likes}"></i>
                         </span>
-                                <a href="article.html">查看详细+</a>
+                                <a href="article.html">See details+</a>
                             </div>
                         </div>
                     </li>
@@ -121,7 +121,7 @@
         <div class="article_box_two">
             <div class="index_article_title clearfix">
                 <h3>Health tips</h3>
-                <a href="article.html">More></a>
+                <a th:href="@{/article}" >More></a>
             </div>
             <div class="article_btn">
                 <div class="article_btn_nav">
@@ -177,7 +177,7 @@
         <div class="article_box_one">
             <div class="index_article_title clearfix">
                 <h3>Recommended blog posts</h3>
-                <a href="list.html">更多></a>
+                <a href="list.html">More></a>
             </div>
             <div th:each="article4:${articleList4}">
                 <ul class="index_article">
@@ -194,13 +194,13 @@
                         <div class="article_list_link">
                         <span class="article_list_count">
                             <i class="see_count"></i>
-                            查看次数:<i th:text="${article4.view_num}"></i>
+                            Number of Views:<i th:text="${article4.view_num}"></i>
                         </span>
                             <span class="article_list_like">
                             <i class="like_count"></i>
-                            喜欢次数:<i th:text="${article4.likes}"></i>
+                            Number of Likes:<i th:text="${article4.likes}"></i>
                         </span>
-                            <a href="article.html">查看详细+</a>
+                            <a href="article.html">See details+</a>
                         </div>
                     </li>
                 </ul>
@@ -271,14 +271,16 @@
                     <p>He who has health has hope; and he who has hope has everything. </p>
                     <p>The appearance of a disease is swift as an arrow; its disappearance slow, like a thread.</p>
                 </div>
-                <a href="#">Read More</a>
+<!--                <a href="#">Read More</a>-->
             </div>
         </div>
         <!--微信二维码部分-->
         <div class="self_erweima right_box">
             <h3>Facebook</h3>
             <div>
-                <img src="img/self_weixin_erweima.png">
+                <a href="https://connect.facebook.com/">
+                <img src="https://i.ibb.co/LrVMXNR/social-fb.png">
+                </a>
             </div>
         </div>
 
@@ -286,11 +288,12 @@
         <div class="self_erweima right_box">
             <h3>Twitter</h3>
             <div>
-                <img src="img/self_qq_erweima.png">
+                <a href="https://twitter-clone-j.netlify.app/auth">
+                <img src="https://i.ibb.co/vJvbLwm/social-twitter.png">
+                </a>
             </div>
         </div>
 
-        <!--座右铭目的把div对齐最多只能2行字，多了就高了-->
         <div class="self_zuoyoum right_box">
 <!--            <h3>真正的自信是内心对自己公平的看待</h3>-->
 
@@ -298,30 +301,30 @@
 
         <!--模板推荐-->
         <div class="right_box tuijian_moban">
-            <h3>养生网站推荐</h3>
+            <h3>Websites About Health</h3>
             <div>
                 <ul>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
+                    <li><a href="https://www.webmd.com/">webmd</a></li>
+                    <li><a href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
+                    <li><a href=" http://www.medicinenet.com">MedicineNet</a></li>
+                    <li><a href="http://www.drugs.com/">Drugs</a></li>
+                    <li><a href="http://www.healthgrades.com/ "> HealthGrades</a></li>
+                    <li><a href="http://www.healthcentral.com/">HealthCentral</a></li>
 
                 </ul>
             </div>
         </div>
 
         <div class="right_box youlian_list">
-            <h3>乱七八糟的推荐</h3>
+            <h3>Recommended by bloggers</h3>
             <div>
                 <ul>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
-                    <li><a href="#">最新模板-律所类模板</a></li>
+                    <li><a href="https://www.nih.gov/">National lnstitutes of Health</a></li>
+                    <li><a href="http://www.health.yahoo.com/ ">Yahoo! Health</a></li>
+                    <li><a href=" http://www.everydayhealth.com/ "> EverydayHealth</a></li>
+                    <li><a href=" http://www.mercola.com/"> Mercola</a></li>
+                    <li><a href=" http://www.healthline.com "> Healthline</a></li>
+                    <li><a href=" http://www.medicinenet.com">MedicineNet</a></li>
                 </ul>
             </div>
         </div>
@@ -336,11 +339,11 @@
         <div class="footer_img">
             <ul>
                 <li>
-                    <img src="img/self_qq_bottom_erweima.png">
+                    <img src="https://i.ibb.co/LrVMXNR/social-fb.png">
                     <span>My Facebook</span>
                 </li>
                 <li>
-                    <img src="img/self_weixin_bottom_erweima.jpg">
+                    <img src="https://i.ibb.co/vJvbLwm/social-twitter.png">
                     <span>My Twitter</span>
                 </li>
             </ul>
