@@ -6,9 +6,13 @@ import com.cy.blog.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -66,6 +70,25 @@ public class hello {
         }
 
         return "article";
+    }
+
+    @RequestMapping("/manage")
+    public String manage(Model model) {
+        model.addAttribute("Article", new Article());
+        return "manage";
+    }
+
+    @PostMapping("/article/add")
+    public String addArticle(@ModelAttribute Article article) {
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+        article.setTime(date);
+        article.setAuthor("Susan");
+        article.setView_num(0);
+        article.setLikes(0);
+        article.setComment_num(0);
+        mapper.addArticle(article);
+        return "manage";
     }
 
 

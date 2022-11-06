@@ -28,4 +28,9 @@ public interface Mapper {
 
     @Select("select * from article where id = #{id}")
     List<Article> getArticle(Article article);
+
+    @Select("INSERT INTO `blog`.`article`" +
+            "(`title`, `author`, `time`, `view_num`, `likes`, `comment_num`, `induction`, `content`, `column`) " +
+            "VALUES (#{title}, #{author} , #{time}, #{view_num}, #{likes}, #{comment_num}, #{induction}, #{content}, #{column})")
+    List<Article> addArticle(Article article);
 }
