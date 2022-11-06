@@ -63,8 +63,9 @@ public class hello {
         article.setId(articleId);
 
         List<Article> allArticleList = mapper.article();
-        model.addAttribute("allArticle",allArticleList);
+        model.addAttribute("allArticle", allArticleList);
 
+<<<<<<< HEAD
         try {
 
             List<Article> previousArticleList = mapper.getPreviousArticle(article);
@@ -82,6 +83,15 @@ public class hello {
             List<Article> nextArticleList = mapper.getNextArticles(article);
             Article nextArticle = nextArticleList.get(0);
             model.addAttribute("nextArticle",nextArticle);
+=======
+        List<Article> previousArticleList = mapper.getPreviousArticle(article);
+        Article previousArticle = previousArticleList.get(0);
+        model.addAttribute("previousArticle", previousArticle);
+
+        List<Article> nextArticleList = mapper.getNextArticles(article);
+        Article nextArticle = nextArticleList.get(0);
+        model.addAttribute("nextArticle", nextArticle);
+>>>>>>> main
 
             List<Article> articleList = mapper.getArticle(article);
             Article newArticle = articleList.get(0);
@@ -100,8 +110,9 @@ public class hello {
         model.addAttribute("Article", new Article());
         return "manage";
     }
+
     @RequestMapping("/list1")
-    public String list(@RequestParam String articleColumn,Model model) {
+    public String list(@RequestParam String articleColumn, Model model) {
         Article article = new Article();
         article.setColumn(articleColumn);
         try {
@@ -110,11 +121,10 @@ public class hello {
         } catch (Exception e) {
 
 
-
-
         }
         return "list1";
     }
+
     @RequestMapping("/article/add")
     public String addArticle(@ModelAttribute Article article, Model model) {
         Date date = new Date();
@@ -130,5 +140,18 @@ public class hello {
     }
 
 
+    @RequestMapping("/editArticle")
+    public String editArticle(Model model) {
+        model.addAttribute("Article", new Article());
+        return "editArticle";
+    }
+
+    @RequestMapping("/article/edit")
+    public String eddArticle(@ModelAttribute Article article, Model model) {
+        model.addAttribute("Article", new Article());
+        mapper.editArticles(article);
+        return "editArticle";
+
+    }
 
 }
