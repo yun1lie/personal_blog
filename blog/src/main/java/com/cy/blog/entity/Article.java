@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class article {
+public class Article {
     private int id;
     private String title;
     private String author;
@@ -21,4 +21,8 @@ public class article {
     private String induction;
     private String content;
     private String column;
+
+    public Article(int id) {
+        this.id = id;
+    }
 }

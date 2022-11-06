@@ -94,7 +94,7 @@
             <div th:each="article:${articleList}">
                 <ul class="index_article">
                     <li class="clearfix article_list">
-                        <a href="article.html" class="article_list_img">
+                        <a th:href="@{/article(articleId=${article.getId()})}" class="article_list_img">
                             <img src="img/bg_1.png">
                         </a>
                         <div>
