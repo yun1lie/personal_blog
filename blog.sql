@@ -11,7 +11,7 @@
  Target Server Version : 80031
  File Encoding         : 65001
 
- Date: 24/10/2022 17:01:47
+ Date: 09/11/2022 17:42:04
 */
 
 SET NAMES utf8mb4;
@@ -46,7 +46,7 @@ CREATE TABLE `article`  (
   `content` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `column` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of article
@@ -60,7 +60,15 @@ INSERT INTO `article` VALUES (6, 'diet3', NULL, NULL, NULL, NULL, NULL, '吃得�
 INSERT INTO `article` VALUES (7, 'sport1', NULL, NULL, NULL, NULL, NULL, '步行锻炼简便易行,尤其适宜于中老年人和体弱者的健身养生。', NULL, 'sport');
 INSERT INTO `article` VALUES (8, 'sport2', NULL, NULL, NULL, NULL, NULL, '.远眺：减轻眼睛疲劳;', NULL, 'sport');
 INSERT INTO `article` VALUES (9, 'sport3', NULL, NULL, NULL, NULL, NULL, '转颈，既能提神又能防止颈椎', NULL, 'sport');
-INSERT INTO `article` VALUES (10, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL);
+INSERT INTO `article` VALUES (10, 'music1', '1', '2022-11-16 17:04:04', 1, 1, 120, '音乐可以让身体放轻松，好的音乐可以纾解压力，避免因自律神经紧张失调而导致慢性疾病的产生。', '', 'music');
+INSERT INTO `article` VALUES (11, 'music2', '2', NULL, NULL, NULL, NULL, '音乐可以敲开封闭的心灵，纾解忧郁苦闷的心情，甚至音乐还可以做到某些程度的心灵治疗。', NULL, 'music');
+INSERT INTO `article` VALUES (12, 'music3', NULL, NULL, NULL, NULL, NULL, '音乐可以刺激脑部，活化脑细胞，适当的音乐刺激对脑部的活动有很大的帮助，甚至达到防止老化的功效。', NULL, 'music');
+INSERT INTO `article` VALUES (13, 'smile1', NULL, NULL, NULL, NULL, NULL, '笑有助于美容，面部肌肉收缩皮肤会更有弹性；', NULL, 'smile');
+INSERT INTO `article` VALUES (14, 'smile2', NULL, NULL, NULL, NULL, NULL, '笑能增强心肌功能，使大脑皮层兴奋，脑部功能增强', NULL, 'smile');
+INSERT INTO `article` VALUES (15, 'smile3', NULL, NULL, NULL, NULL, NULL, '笑能缓解紧张情绪，化解焦虑和压力，有助于治疗抑郁症等精神疾病；\r\n\r\n笑能缓解紧张情绪，化解焦虑和压力，有助于治疗抑郁症等精神疾病；\r\n\r\n笑能缓解紧张情绪，化解焦虑和压力，有助于治疗抑郁症等精神疾病；\r\n\r\n笑能缓解紧张情绪，化解焦虑和压力，有助于治疗抑郁症等精神疾病；\r\n\r\n笑能缓解紧张情绪，化解焦虑和压力，有助于治疗抑郁症等精神疾病；\r\n\r\n笑能缓解紧张情绪，化解焦虑和压力，有助于治疗抑郁症等精神疾病；\r\n\r\n笑能缓解紧张情绪，化解焦虑和压力，有助于治疗抑郁症等精神疾病', NULL, 'smile');
+INSERT INTO `article` VALUES (16, 'travel1', NULL, NULL, NULL, NULL, NULL, '旅游可以缓解工作和生活方面的压力，使精神得到彻底放松 ，旅游是在没有任何心理负担的情况下进行的 ，所以可以让自己的心灵得到彻底的放松。', NULL, 'travel');
+INSERT INTO `article` VALUES (17, 'travel2', NULL, NULL, NULL, NULL, NULL, '旅游往往要跋山涉水的 ，过程虽很累 ，但它带给人的更多是精神上的和肉体上的愉悦 ，比如赏风景 ，尝美食 ，住宾馆 ，听故事等等 ，哪一样都会让我们愉悦吧， 一次旅游， 回味无穷。', NULL, 'travel');
+INSERT INTO `article` VALUES (18, 'travel3', NULL, NULL, NULL, NULL, NULL, '旅游可以开阔眼界 ，增长见识和见闻， 通过旅游 ，人们可以亲眼观察到丰富的人文景观 ，还可以了解各地的文化风俗 ，饮食习惯和宗教信仰 ，通过旅游可以给人带来全新的感受。', NULL, 'travel');
 
 -- ----------------------------
 -- Table structure for article_comment

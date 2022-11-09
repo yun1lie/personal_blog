@@ -23,7 +23,7 @@
         <div class="header_nav">
             <ul class="clearfix">
                 <li><a th:href="@{/list}">Article List</a></li>
-                <li class="have_second"><a th:href="@{/list}">healthy body</a>
+                <li class="have_second"><a>healthy body</a>
 
                     <ul class="nav_second">
                         <i></i>
@@ -33,12 +33,12 @@
                     </ul>
                 </li>
                 <li class="have_second">
-                    <a href="list.html">psychology</a>
+                    <a>psychology</a>
                     <ul class="nav_second">
                         <i></i>
-                        <li><a href="list.html">Smile every day</a></li>
-                        <li><a href="list.html">Music recommendation</a></li>
-                        <li><a href="list.html">Travel recommendation</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'smile')}">Smile every day</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'music')}">Music recommendation</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'travel')}">Travel recommendation</a></li>
                     </ul>
                 </li>
                 <li><a th:href="@{/about_me}">About me</a></li>
@@ -84,40 +84,30 @@
             <p>Latest articles</p>
         </div>
 
-        <div class="article_box_one" th:each="article:${articleList}">
-
+        <div th:each="article:${articleList}">
             <ul class="index_article">
                 <li class="clearfix article_list">
-
-                        <img src="img/banner1.png">
+                    <a th:href="@{/article(articleId=${article.getId()})}" class="article_list_img">
+                        <img src="img/bg_1.png">
                     </a>
-
-                    <h3 th:text="${article.title}"></h3>
-                    <p th:text="${article.induction}"></p>
-
-
-                    <div class="article_list_link">
-                            <span class="article_list_count">
-                                <i class="see_count"></i>
-                                Number of views:<i th:text="${article.view_num}"></i>
-                            </span>
-
-                        <span class="article_list_like">
-
-
-                                <i class="like_count"></i>
-                                Likes:<i th:text="${article.likes}"></i>
-
-
-                            </span>
-                        <a  th:href="@{/article(articleId=${article.getId()})}">View Details+</a>
+                    <div>
+                        <a th:href="@{/article(articleId=${article.getId()})}"><h3 th:text="${article.title}"></h3></a>
+                        <p th:text="${article.induction}"></p>
+                        <div class="article_list_link">
+                        <span class="article_list_count">
+                            <i class="see_count"></i>
+                            Number of Views:<i th:text="${article.view_num}"></i>
+                        </span>
+                            <span class="article_list_like">
+                            <i class="like_count"></i>
+                            Number of Likes:<i th:text="${article.likes}"></i>
+                        </span>
+                            <a th:href="@{/article(articleId=${article.getId()})}">See details+</a>
+                        </div>
                     </div>
-
                 </li>
             </ul>
-
         </div>
-
 
         <div class="pagelist">
             <a href="#">首页</a>

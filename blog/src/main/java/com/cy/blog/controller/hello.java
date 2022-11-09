@@ -114,6 +114,19 @@ public class hello {
         return "list1";
     }
 
+    @RequestMapping("/list2")
+    public String list2(@RequestParam String articleColumn, Model model) {
+        Article article = new Article();
+        article.setColumn(articleColumn);
+        try {
+            List<Article> articleList = mapper.getArticleColumn(article);
+            model.addAttribute("articleList", articleList);
+        } catch (Exception e) {
+
+        }
+        return "list2";
+    }
+
     @RequestMapping("/article/add")
     public String addArticle(@ModelAttribute Article article, Model model) {
         Date date = new Date();

@@ -22,7 +22,7 @@
         </div>
         <div class="header_nav">
             <ul class="clearfix">
-                <li><a th:href="@{/addArticle}">Add Article</a></li>
+                <li><a th:href="@{/manage}">Add Article</a></li>
                 <li><a th:href="@{/editArticle}">Edit Article</a>
                 </li>
                 <li>
@@ -33,36 +33,34 @@
         </div>
     </div>
     <div class="addArticle">
-        <h3>edit article</h3>
+        <h3 style="text-align: center">Edit Article</h3>
         <form th:action="@{/article/edit}" th:object="${Article}"  method="post">
-
-            <div>
-                <label >article id</label>
+            <div class="art">
+                <label >Article ID:</label><br>
                 <input type="text" th:field="*{id}" name="id" placeholder="please input id">
-
             </div>
-            <div>
-                <label>title</label>
+            <div class="art">
+                <label>Title</label><br>
                 <input type="text" th:field="*{title}" name="title" placeholder="please input title">
             </div>
 
-            <div>
-                <label>induction</label>
+            <div class="art">
+                <label>Induction</label><br>
                 <input type="text" th:field="*{induction}" name="induction" placeholder="please input induction">
             </div>
 
-            <div>
-                <label>content</label>
+            <div class="art">
+                <label>Content</label><br>
                 <input type="text" th:field="*{content}" name="content" placeholder="please input content">
             </div>
 
-            <div>
-                <label>column</label>
+            <div class="art">
+                <label>Column</label><br>
                 <input type="text"   th:field="*{column}" name="column" placeholder="please input column">
             </div>
 
-            <div>
-                <button>submit</button>
+            <div class="art">
+                <button>Submit</button>
             </div>
 
         </form>
@@ -70,4 +68,52 @@
 
 </div>
 </body>
+<style>
+    .addArticle {
+        height: 300px;
+        color: black;
+        font-size: 30px;
+        margin-top: 5%;
+    }
+
+    .art {
+        width: 40%;
+        margin: 0 auto;
+    }
+    input {
+        outline-style: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 13px 14px;
+        width: 800px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Microsoft soft";
+    }
+
+    input:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+    }
+
+    button {
+        margin-top: 10%;
+        margin-left: 43%;
+        width: 270px;
+        height: 40px;
+        border-width: 0px;
+        border-radius: 3px;
+        background: #1E90FF;
+        cursor: pointer;
+        outline: none;
+        font-family: Microsoft YaHei;
+        color: white;
+        font-size: 17px;
+    }
+    button:hover {
+        background: #5599FF;
+    }
+</style>
 </html>

@@ -23,7 +23,7 @@
         <div class="header_nav">
             <ul class="clearfix">
                 <li><a th:href="@{/list}">Article List</a></li>
-                <li class="have_second"><a th:href="@{/list}">healthy body</a>
+                <li class="have_second"><a >healthy body</a>
 
                     <ul class="nav_second">
                         <i></i>
@@ -33,12 +33,12 @@
                     </ul>
                 </li>
                 <li class="have_second">
-                    <a href="list.html">psychology</a>
+                    <a >psychology</a>
                     <ul class="nav_second">
                         <i></i>
-                        <li><a href="list.html">Smile every day</a></li>
-                        <li><a href="list.html">Music recommendation</a></li>
-                        <li><a href="list.html">Travel recommendation</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'smile')}">Smile every day</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'music')}">Music recommendation</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'travel')}">Travel recommendation</a></li>
                     </ul>
                 </li>
                 <li><a th:href="@{/about_me}">About me</a></li>

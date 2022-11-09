@@ -38,9 +38,9 @@
                     <a href="list.html">psychology</a>
                     <ul class="nav_second">
                         <i></i>
-                        <li><a href="list.html">Smile every day</a></li>
-                        <li><a href="list.html">Music recommendation</a></li>
-                        <li><a href="list.html">Travel recommendation</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'smile')}">Smile every day</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'music')}">Music recommendation</a></li>
+                        <li><a th:href="@{/list2(articleColumn= 'travel')}">Travel recommendation</a></li>
                     </ul>
                 </li>
                 <li><a th:href="@{/about_me}">About me</a></li>
