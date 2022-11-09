@@ -87,31 +87,31 @@
         <div class="article_box_one" >
 
             <ul class="index_article"  >
-                <li class="clearfix article_list" th:each="articleList:${articleList}" >
+                <li class="clearfix article_list" th:each="articleList6:${articleList}" >
 
-                    <a href="article.html" class="article_list_img">
+                    <a th:href="@{/article(articleId=${articleList6.getId()})}" class="article_list_img">
                         <img src="img/banner1.png">
                     </a>
 
-                    <h3 th:text="${articleList.title}"></h3>
-                    <p th:text="${articleList.getInduction()}"></p>
+                    <h3 th:text="${articleList6.title}"></h3>
+                    <p th:text="${articleList6.getInduction()}"></p>
 
 
                     <div class="article_list_link">
                             <span class="article_list_count">
                                 <i class="see_count"></i>
-                                Number of views:<i th:text="${articleList.getView_num()}"></i>
+                                Number of views:<i th:text="${articleList6.getView_num()}"></i>
                             </span>
 
                         <span class="article_list_like">
 
 
                                 <i class="like_count"></i>
-                                Likes:<i th:text="${articleList.getLikes()}"></i>
+                                Likes:<i th:text="${articleList6.getLikes()}"></i>
 
 
                             </span>
-                        <a href="down_article.html">View Details+</a>
+                        <a th:href="@{/article(articleId=${articleList6.getId()})}">View Details+</a>
                     </div>
 
                 </li>

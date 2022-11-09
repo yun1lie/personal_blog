@@ -89,7 +89,6 @@
             <ul class="index_article">
                 <li class="clearfix article_list">
 
-                    <a href="article.html" class="article_list_img">
                         <img src="img/banner1.png">
                     </a>
 
@@ -111,7 +110,7 @@
 
 
                             </span>
-                        <a href="down_article.html">View Details+</a>
+                        <a  th:href="@{/article(articleId=${article.getId()})}">View Details+</a>
                     </div>
 
                 </li>
