@@ -2,6 +2,8 @@ package com.cy.blog.mapper;
 
 import com.cy.blog.entity.AboutMe;
 import com.cy.blog.entity.Article;
+import lombok.Data;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -47,6 +49,9 @@ public interface Mapper {
 
     @Update("UPDATE `blog`.`article` SET `title` = #{title}, `induction` = #{induction}, `content` = #{content}, `column` = #{column} WHERE `id` = #{id}")
     int editArticles(Article article);
+
+    @Delete("DELETE FROM `blog`.`article` WHERE `id` = #{id}")
+    int deleteArticles(Article article);
 
 
 
