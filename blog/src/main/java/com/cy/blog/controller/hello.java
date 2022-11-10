@@ -2,6 +2,7 @@ package com.cy.blog.controller;
 
 import com.cy.blog.entity.AboutMe;
 import com.cy.blog.entity.Article;
+import com.cy.blog.entity.Comment;
 import com.cy.blog.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -85,6 +86,9 @@ public class hello {
             List<Article> articleList = mapper.getArticle(article);
             Article newArticle = articleList.get(0);
             model.addAttribute("newArticle", newArticle);
+
+            List<Comment> commentList = mapper.selectComment(article);
+            model.addAttribute("commentList", commentList);
             return "article";
 
         } catch (Exception e) {

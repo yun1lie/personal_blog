@@ -2,6 +2,7 @@ package com.cy.blog.mapper;
 
 import com.cy.blog.entity.AboutMe;
 import com.cy.blog.entity.Article;
+import com.cy.blog.entity.Comment;
 import lombok.Data;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
@@ -52,6 +53,9 @@ public interface Mapper {
 
     @Delete("DELETE FROM `blog`.`article` WHERE `id` = #{id}")
     int deleteArticles(Article article);
+
+    @Select("select * from comment where comment.id in (select id from article_comment where article_comment.article_id = #{id})")
+    List<Comment> selectComment(Article article);
 
 
 
