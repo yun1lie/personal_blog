@@ -38,7 +38,7 @@
             <div class="art">
                 <h3 style="margin-top: 3%">Please input article which you want to delete</h3>
                 <label >Article ID:</label><br>
-                <input type="text" th:field="*{id}" name="id" placeholder="please input id">
+                <input type="text" th:field="*{id}" name="id" placeholder="please input id" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
 
             </div>
 

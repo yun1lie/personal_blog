@@ -36,26 +36,26 @@
         <form th:action="@{/article/edit}" th:object="${Article}"  method="post">
             <div class="art">
                 <label >Article ID:</label><br>
-                <input type="text" th:field="*{id}" name="id" placeholder="please input id">
+                <input type="text" th:field="*{id}" name="id" placeholder="please input id" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
             </div>
             <div class="art">
                 <label>Title</label><br>
-                <input type="text" th:field="*{title}" name="title" placeholder="please input title">
+                <input type="text" th:field="*{title}" name="title" placeholder="please input title" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
             </div>
 
             <div class="art">
                 <label>Induction</label><br>
-                <input type="text" th:field="*{induction}" name="induction" placeholder="please input induction">
+                <input type="text" th:field="*{induction}" name="induction" placeholder="please input induction" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
             </div>
 
             <div class="art">
                 <label>Content</label><br>
-                <input type="text" th:field="*{content}" name="content" placeholder="please input content">
+                <input type="text" th:field="*{content}" name="content" placeholder="please input content" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
             </div>
 
             <div class="art">
                 <label>Column</label><br>
-                <input type="text"   th:field="*{column}" name="column" placeholder="please input column">
+                <input type="text"   th:field="*{column}" name="column" placeholder="please input column" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
             </div>
 
             <div class="art">

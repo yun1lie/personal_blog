@@ -6,6 +6,7 @@ import com.cy.blog.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -142,7 +143,8 @@ public class hello {
     }
 
 
-    @RequestMapping("/editArticle")
+
+        @RequestMapping("/editArticle")
     public String editArticle(Model model) {
         model.addAttribute("Article", new Article());
         return "editArticle";
