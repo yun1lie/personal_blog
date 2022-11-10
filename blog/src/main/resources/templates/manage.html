@@ -13,6 +13,14 @@
     <script th:src="@{/js/base.js}" type="text/javascript"></script>
     <script th:src="@{/js/jquery.slides.min.js}" type="text/javascript"></script>
 </head>
+<script>
+    // function a() {
+    //     window.onload = f;
+    //     function f() {
+    //         alert("Successful!");
+    //     }
+    // }
+</script>
 <body>
 
 <div class="head_box">
@@ -33,11 +41,11 @@
     </div>
 
     <div class="addArticle">
-        <form th:action="@{/article/add}" th:object="${Article}" method="post">
+        <form th:action="@{/article/add}" th:object="${Article}" method="post"  >
             <div class="art">
                 <div class="art1">
                     <label>Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <input type="text" th:field="*{title}" name="title" placeholder="please input title">
+                    <input type="text" th:field="*{title}" name="title" placeholder="please input title!" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
                 </div>
 
             </div>
@@ -45,21 +53,21 @@
             <div class="art">
                 <div class="art1">
                     <label>Induction</label>
-                    <input style="height: 150px;" type="text" th:field="*{induction}" name="induction" placeholder="please input induction">
+                    <input style="height: 150px;" type="text" th:field="*{induction}" name="induction" placeholder="please input induction!" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
                 </div>
             </div>
 
             <div class="art">
                 <div class="art1">
                     <label>Content&nbsp;&nbsp;&nbsp;</label>
-                    <input style="height: 250px;" type="text" th:field="*{content}" name="content" placeholder="please input content">
+                    <input style="height: 250px;" type="text" th:field="*{content}" name="content" placeholder="please input content!" required="true" oninvalid="setCustomValidity('You need to fill it in !')"  oninput="setCustomValidity('')">
                 </div>
             </div>
 
             <div class="art">
                 <div class="art1">
                     <label>Column&nbsp;&nbsp;&nbsp;</label>
-                    <input type="text" th:field="*{column}" name="column" placeholder="please input column">
+                    <input type="text" th:field="*{column}" name="column" placeholder="please input column!" required="true" oninvalid="setCustomValidity('You need to fill it in !')" oninput="setCustomValidity('')">
                 </div>
             </div>
 
@@ -68,6 +76,8 @@
             </div>
 
         </form>
+
+
     </div>
 
 </div>
@@ -87,6 +97,10 @@
     .art1 {
         margin: 1% auto;
         width: 40%;
+    }
+
+    span{
+        color: red;
     }
 
     input {
