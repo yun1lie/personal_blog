@@ -95,7 +95,7 @@
                 <ul class="index_article">
                     <li class="clearfix article_list">
                         <a th:href="@{/article(articleId=${article.getId()})}" class="article_list_img">
-                            <img src="img/bg_1.png">
+                            <img src="img/1.jpg">
                         </a>
                         <div>
                             <a th:href="@{/article(articleId=${article.getId()})}"><h3 th:text="${article.title}"></h3></a>
@@ -121,7 +121,6 @@
         <div class="article_box_two">
             <div class="index_article_title clearfix">
                 <h3>Health tips</h3>
-                <a th:href="@{/article}" >More></a>
             </div>
             <div class="article_btn">
                 <div class="article_btn_nav">
@@ -140,7 +139,7 @@
                         <ul>
                             <li th:each="article1:${articleList1}">
                                 <i></i><a href="article.html"
-                                          imgsrc="img/bg_6.png"
+                                          imgsrc="img/2.jpg"
                                           th:text="${article1.title}"></a>
                                 <p th:text="${article1.induction}"></p>
                             </li>
@@ -155,7 +154,7 @@
                         <ul>
                             <li th:each="article2:${articleList2}">
                                 <i></i><a href="article.html"
-                                          imgsrc="img/bg_7.png" th:text="${article2.title}"></a>
+                                          imgsrc="img/3.jpg" th:text="${article2.title}"></a>
                                 <p th:text="${article2.induction}"></p></li>
                         </ul>
                     </div>
@@ -165,7 +164,7 @@
                         </a>
                         <ul>
                             <li th:each="article3:${articleList3}"><i></i><a href="article.html"
-                                          imgsrc="img/bg_8.png" th:text="${article3.title}"></a>
+                                          imgsrc="img/4.jpg" th:text="${article3.title}"></a>
                                 <p th:text="${article3.induction}"></p></li>
                         </ul>
                     </div>
@@ -184,7 +183,7 @@
                     <li class="clearfix article_list">
 
                         <a href="article.html" class="article_list_img">
-                            <img src="img/bg_6.png">
+                            <img src="img/5.jpg">
                         </a>
 
                         <h3  th:text="${article4.title}"></h3>
