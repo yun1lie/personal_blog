@@ -133,12 +133,12 @@
 
                 <div class="article_btn_box">
                     <div class="article_btn_box_item clearfix">
-                        <a href="#" class="article_btn_box_item_img">
+                        <a class="article_btn_box_item_img">
                             <img src="">
                         </a>
                         <ul>
                             <li th:each="article1:${articleList1}">
-                                <i></i><a href="article.html"
+                                <i></i><a
                                           imgsrc="img/2.jpg"
                                           th:text="${article1.title}"></a>
                                 <p th:text="${article1.induction}"></p>
@@ -148,22 +148,22 @@
                     </div>
 
                     <div class="article_btn_box_item clearfix">
-                        <a href="#" class="article_btn_box_item_img">
+                        <a  class="article_btn_box_item_img">
                             <img src="">
                         </a>
                         <ul>
                             <li th:each="article2:${articleList2}">
-                                <i></i><a href="article.html"
+                                <i></i><a
                                           imgsrc="img/3.jpg" th:text="${article2.title}"></a>
                                 <p th:text="${article2.induction}"></p></li>
                         </ul>
                     </div>
                     <div class="article_btn_box_item clearfix">
-                        <a href="article.html" class="article_btn_box_item_img">
+                        <a  class="article_btn_box_item_img">
                             <img src="">
                         </a>
                         <ul>
-                            <li th:each="article3:${articleList3}"><i></i><a href="article.html"
+                            <li th:each="article3:${articleList3}"><i></i><a
                                           imgsrc="img/4.jpg" th:text="${article3.title}"></a>
                                 <p th:text="${article3.induction}"></p></li>
                         </ul>
@@ -256,7 +256,7 @@
                     <p>He who has health has hope; and he who has hope has everything. </p>
                     <p>The appearance of a disease is swift as an arrow; its disappearance slow, like a thread.</p>
                 </div>
-                <a href="#">Read More</a>
+                <a th:href="about_me">Read More</a>
             </div>
         </div>
         <!--个人介绍隐藏部分，只在右侧被翻到最上面显示-->
@@ -269,7 +269,7 @@
                     <p>He who has health has hope; and he who has hope has everything. </p>
                     <p>The appearance of a disease is swift as an arrow; its disappearance slow, like a thread.</p>
                 </div>
-<!--                <a href="#">Read More</a>-->
+                <a th:href="about_me">Read More</a>
             </div>
         </div>
         <!--微信二维码部分-->

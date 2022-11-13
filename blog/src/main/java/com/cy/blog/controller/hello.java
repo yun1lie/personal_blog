@@ -183,7 +183,6 @@ public class hello {
     @RequestMapping("/comment/add")
     public String addComment(@ModelAttribute Comment comment, Model model){
         model.addAttribute("comment", new Comment());
-
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
         comment.setTime(date);
