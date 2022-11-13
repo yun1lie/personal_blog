@@ -14,7 +14,7 @@ public interface Mapper {
     @Select("SELECT * FROM `blog`.`about_me`")
     List<AboutMe> aboutme();
 
-    @Select("SELECT * FROM `blog`.`article` LIMIT 6")
+    @Select("SELECT * FROM `blog`.`article` ORDER BY RAND() LIMIT 6")
     List<Article> article();
 
     @Select("SELECT * FROM `blog`.`article` WHERE `column` = 'sleep' LIMIT 3")

@@ -176,7 +176,6 @@
         <div class="article_box_one">
             <div class="index_article_title clearfix">
                 <h3>Recommended blog posts</h3>
-                <a href="list.html">More></a>
             </div>
             <div th:each="article4:${articleList4}">
                 <ul class="index_article">
@@ -199,7 +198,7 @@
                             <i class="like_count"></i>
                             Number of Likes:<i th:text="${article4.likes}"></i>
                         </span>
-                            <a href="article.html">See details+</a>
+                            <a th:href="@{/article(articleId=${article4.getId()})}">See details+</a>
                         </div>
                     </li>
                 </ul>
