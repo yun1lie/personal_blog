@@ -151,8 +151,35 @@
 
             <div class="pinglun_box">
                 <div class="article_article_title">
+
+                    <h3>Publish comment</h3>
+                    <form th:action="@{/comment/add}"  th:object="${comment}"  method="post">
+                        <div>
+                            <input type="text" th:field="*{id}" name="id" style="visibility: hidden">
+                        </div>
+
+                        <div>
+                            <label>content</label> <br>
+                            <input type="text" th:field="*{content}" name="content"   placeholder="please input content">
+                        </div>
+
+                        <div>
+                            <label>email</label> <br>
+                            <input type="text" th:field="*{email}" name="email"   placeholder="please input email">
+                        </div>
+
+                        <div><button>submit</button></div>
+                    </form>
                     <h3>Article Comments</h3>
-                    
+                    <div th:each="comment:${commentList}">
+                        <p>time: </p>
+                        <p th:text="${comment.getTime()}"></p>
+                        <p>content:</p>
+                        <p th:text="${comment.getContent()}"></p>
+                        <p>email:</p>
+                        <p th:text="${comment.getEmail()}"></p>
+                    </div>
+                    <hr>
                 </div>
             </div>
 
@@ -170,10 +197,10 @@
                 <div>
                     <div class="about_me_text">
                         <h3>Susan</h3>
-                        <p>Hobbies: Programming,Games</p>
+                        <p>Hobbies: Program,Games</p>
                         <p>Profession: National Health Manager</p>
                         <p>Dream: I hope that one day the world will be peaceful and everyone will be harmonious.</p>
-                        <img src="img/self_weixin_bottom_erweima.jpg">
+                        <img src="img/self_weixin_bottomingm_erweima.jpg">
                     </div>
                 </div>
             </div>
@@ -207,7 +234,7 @@
                 </div>
             </div>
 
-<!--友情链接-->
+
             <div class="right_box tuijian_moban">
                 <h3>Websites About Health</h3>
                 <div>
@@ -225,7 +252,7 @@
 
 
 
-<!--微信二维码部分-->
+
             <div class="self_erweima right_box">
                 <h3>Facebook</h3>
                 <div>
@@ -234,7 +261,7 @@
                     </a>
                 </div>
             </div>
-<!--qq二维码部分-->
+
             <div class="self_erweima right_box">
                 <h3>Twitter</h3>
                 <div>
@@ -244,19 +271,7 @@
                 </div>
             </div>
 
-<!--个人介绍隐藏部分，只在右侧被翻到最上面显示-->
-            <div class="self_info_scroll_bottom right_box">
-                <img src="img/self.jpg">
-                <div class="self_info_text">
-                    <h3>大青牛爱穿山甲</h3>
-                    <div>
-                        <p>以彼之长，增长自身</p>
-                        <p>有匪君子，如切如磋，如琢如磨。</p>
-                        <p>天将降大任于斯人也，必先苦其心志、磨其胫骨、饿其体肤</p>
-                    </div>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
+
 
 
 
@@ -292,7 +307,7 @@
                 used for any commercial purpose without permission.</p>
             <p>3. All articles on this site can be reprinted, please indicate the source, welcome to see the favorite
                 articles to help forward and like.</p>
-            <!--            <p>Copyright © Susan  All copyrights reserved</p>-->
+
         </div>
     </div>
 
