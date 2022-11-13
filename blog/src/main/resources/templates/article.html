@@ -151,6 +151,25 @@
 
             <div class="pinglun_box">
                 <div class="article_article_title">
+
+                    <h3>Publish comment</h3>
+                    <form th:action="@{/comment/add}"  th:object="${comment}"  method="post">
+                        <div>
+                            <input type="text" th:field="*{id}" name="id" style="visibility: hidden">
+                        </div>
+
+                        <div>
+                            <label>content</label> <br>
+                            <input type="text" th:field="*{content}" name="content"   placeholder="please input content">
+                        </div>
+
+                        <div>
+                            <label>email</label> <br>
+                            <input type="text" th:field="*{email}" name="email"   placeholder="please input email">
+                        </div>
+
+                        <div><button>submit</button></div>
+                    </form>
                     <h3>Article Comments</h3>
                     <div th:each="comment:${commentList}">
                         <p>time: </p>
@@ -178,10 +197,10 @@
                 <div>
                     <div class="about_me_text">
                         <h3>Susan</h3>
-                        <p>Hobbies: Programming,Games</p>
+                        <p>Hobbies: Program,Games</p>
                         <p>Profession: National Health Manager</p>
                         <p>Dream: I hope that one day the world will be peaceful and everyone will be harmonious.</p>
-                        <img src="img/self_weixin_bottom_erweima.jpg">
+                        <img src="img/self_weixin_bottomingm_erweima.jpg">
                     </div>
                 </div>
             </div>

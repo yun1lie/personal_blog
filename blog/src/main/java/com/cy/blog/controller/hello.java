@@ -90,6 +90,10 @@ public class hello {
 
             List<Comment> commentList = mapper.selectComment(article);
             model.addAttribute("commentList", commentList);
+
+            Comment co = new Comment();
+            co.setId(newArticle.getId());
+            model.addAttribute("comment", co);
             return "article";
 
         } catch (Exception e) {
@@ -175,10 +179,19 @@ public class hello {
         return "deleteArticle";
     }
 
-//    @RequestMapping("/editAboutMe")
-//    public String editAboutMe(Model model){
-//        model.addAttribute("AboutMe", new AboutMe());
-//        return "editAboutMe";
-//    }
+
+    @RequestMapping("/comment/add")
+    public String addComment(@ModelAttribute Comment comment, Model model){
+        model.addAttribute("comment", new Comment());
+
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+        comment.setTime(date);
+        mapper.addComment(comment);
+        mapper.addC(comment.getId());
+        return "index";
+    }
+
+
 
 }

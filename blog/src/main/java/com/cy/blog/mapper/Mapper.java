@@ -4,9 +4,7 @@ import com.cy.blog.entity.AboutMe;
 import com.cy.blog.entity.Article;
 import com.cy.blog.entity.Comment;
 import lombok.Data;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -58,5 +56,9 @@ public interface Mapper {
     List<Comment> selectComment(Article article);
 
 
+    @Insert("INSERT INTO `blog`.`comment`(`time`, `content`, `email`) VALUES (#{time}, #{content}, #{email})")
+    int addComment(Comment comment);
 
+    @Insert("INSERT INTO `blog`.`article_comment`(`article_id`, `comment_id`) VALUES (#{article_id}, (select max(id) from comment))")
+    int addC(@Param("article_id") Integer id);
 }
